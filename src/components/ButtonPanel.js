@@ -7,15 +7,15 @@ function ButtonPanel() {
     <div className={classes.ButtonPanel}>
       <div className={classes.calcRow}>
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="AC"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="+/-"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="%"
         />
         <Button
@@ -24,15 +24,15 @@ function ButtonPanel() {
       </div>
       <div className={classes.calcRow}>
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="7"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="8"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="9"
         />
         <Button
@@ -41,15 +41,15 @@ function ButtonPanel() {
       </div>
       <div className={classes.calcRow}>
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="4"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="5"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="6"
         />
         <Button
@@ -58,15 +58,15 @@ function ButtonPanel() {
       </div>
       <div className={classes.calcRow}>
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="1"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="2"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="3"
         />
         <Button
@@ -75,12 +75,12 @@ function ButtonPanel() {
       </div>
       <div className={classes.calcRow}>
         <Button
-          color='#ebe8e8'
-          width='50%'
+          color="#ebe8e8"
+          width="50%"
           name="0"
         />
         <Button
-          color='#ebe8e8'
+          color="#ebe8e8"
           name="."
         />
         <Button

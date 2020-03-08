@@ -6,9 +6,9 @@ const Button = props => {
   const { name, width = '25%', color = 'orange' } = props;
 
   const styles = {
-    width: width,
+    width,
     backgroundColor: color,
-  }
+  };
   return (
     <button type="button" className={classes.Button} style={styles}>{name}</button>
   );
@@ -16,6 +16,8 @@ const Button = props => {
 
 Button.propTypes = {
   name: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default Button;
