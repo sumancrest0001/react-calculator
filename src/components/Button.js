@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
-const Button = props => {
-  const { name, width = '25%', color = 'orange' } = props;
+const button = props => {
+  const { name, width, color } = props;
 
   const styles = {
     width,
@@ -14,10 +14,15 @@ const Button = props => {
   );
 };
 
-Button.propTypes = {
+button.propTypes = {
   name: PropTypes.string.isRequired,
-  width: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
+  width: PropTypes.string,
+  color: PropTypes.string,
 };
 
-export default Button;
+button.defaultProps = {
+  width: '25%',
+  color: 'orange',
+};
+
+export default button;

@@ -53,7 +53,7 @@ function ButtonPanel() {
           name="6"
         />
         <Button
-          name="-"
+          name="+"
         />
       </div>
       <div className={classes.calcRow}>

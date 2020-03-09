@@ -3,7 +3,3 @@
   font-size: 30px;
   font-weight: 600;
 }
-
-.Button:focus {
-  outline: none;
-}
