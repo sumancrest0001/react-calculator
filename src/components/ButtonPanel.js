@@ -76,7 +76,7 @@ function ButtonPanel() {
       <div className={classes.calcRow}>
         <Button
           color="#ebe8e8"
-          width="50%"
+          wide
           name="0"
         />
         <Button

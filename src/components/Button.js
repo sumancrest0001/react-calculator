@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
 const button = props => {
-  const { name, width, color } = props;
-
+  const { name, wide, color } = props;
+  const size = wide ? '50%' : '25%';
   const styles = {
-    width,
+    width: size,
     backgroundColor: color,
   };
   return (
@@ -16,12 +16,12 @@ const button = props => {
 
 button.propTypes = {
   name: PropTypes.string.isRequired,
-  width: PropTypes.string,
+  wide: PropTypes.bool,
   color: PropTypes.string,
 };
 
 button.defaultProps = {
-  width: '25%',
+  wide: false,
   color: 'orange',
 };
 
