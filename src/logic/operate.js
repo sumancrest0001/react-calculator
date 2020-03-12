@@ -1,17 +1,14 @@
 import Big from 'big.js';
 
 function operate(total, operation, next) {
-
-  let a, b;
-
+  let firstOperand;
+  let secondOperand;
   try {
-    a = new Big(total);
-    b = new Big(next);
+    firstOperand = new Big(total);
+    secondOperand = new Big(next);
   } catch (e) {
     return 0;
   }
-  const firstOperand = new Big(total);
-  const secondOperand = new Big(next);
   let result;
 
 
@@ -39,7 +36,6 @@ function operate(total, operation, next) {
     default:
       break;
   }
-  console.log(result);
   return result;
 }
 

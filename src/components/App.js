@@ -14,6 +14,7 @@ class App extends Component {
       total: null,
       operation: null,
       next: null,
+      isCalculated: false,
     };
     this.clickHandler = this.clickHandler.bind(this);
   }
