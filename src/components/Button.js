@@ -8,7 +8,7 @@ const button = props => {
   } = props;
 
   const styles = {
-    width,
+    width: size,
     backgroundColor: color,
   };
   return (
@@ -25,13 +25,13 @@ const button = props => {
 
 button.propTypes = {
   name: PropTypes.string.isRequired,
-  width: PropTypes.string,
+  wide: PropTypes.bool,
   color: PropTypes.string,
   clicked: PropTypes.func.isRequired,
 };
 
 button.defaultProps = {
-  width: '25%',
+  wide: false,
   color: 'orange',
 };
 
