@@ -4,9 +4,9 @@ import classes from './Button.module.css';
 
 const button = props => {
   const {
-    name, width, color, clicked,
+    name, wide, color, clicked,
   } = props;
-
+  const size = wide ? '50%' : '25%';
   const styles = {
     width: size,
     backgroundColor: color,
