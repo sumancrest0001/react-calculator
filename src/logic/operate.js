@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import Big from 'big.js';
 
 function operate(total, operation, next) {
