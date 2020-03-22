@@ -13,7 +13,7 @@ const Display = props => {
 };
 
 Display.propTypes = {
-  output: PropTypes.object.isRequired,
+  output: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 

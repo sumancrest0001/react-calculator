@@ -81,9 +81,19 @@ function calculate(data, name) {
           total: total === null ? name : total + name,
           operation,
           next,
-          isCalculated,
+          isCalculated: false,
         };
-      } if (total && isCalculated) {
+      }
+      if (total && isCalculated && operation) {
+        return {
+          total,
+          next: name,
+          operation,
+          isCalculated: false,
+        };
+      }
+
+      if (total && !operation) {
         return {
           total: name,
           next: null,

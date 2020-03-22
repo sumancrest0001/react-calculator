@@ -4,7 +4,7 @@ import classes from './Button.module.css';
 
 const button = props => {
   const {
-    name, wide, color, clicked,
+    name, wide, color, clickHandler,
   } = props;
   const size = wide ? '50%' : '25%';
   const styles = {
@@ -14,7 +14,7 @@ const button = props => {
   return (
     <button
       type="button"
-      onClick={() => { clicked(name); }}
+      onClick={() => clickHandler(name)}
       className={classes.Button}
       style={styles}
     >
@@ -27,7 +27,7 @@ button.propTypes = {
   name: PropTypes.string.isRequired,
   wide: PropTypes.bool,
   color: PropTypes.string,
-  clicked: PropTypes.func.isRequired,
+  clickHandler: PropTypes.func.isRequired,
 };
 
 button.defaultProps = {
