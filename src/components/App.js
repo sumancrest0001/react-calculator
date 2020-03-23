@@ -16,10 +16,9 @@ class App extends Component {
       next: null,
       isCalculated: false,
     };
-    this.clickHandler = this.clickHandler.bind(this);
   }
 
-  clickHandler(buttonName) {
+  handleClick = buttonName => {
     const output = calculate(this.state, buttonName);
     this.setState(output);
   }
@@ -34,7 +33,7 @@ class App extends Component {
             // eslint-disable-next-line react/destructuring-assignment
             output={this.state}
           />
-          <ButtonPanel click={this.clickHandler} />
+          <ButtonPanel clickHandler={this.handleClick} />
         </div>
       </Aux>
     );

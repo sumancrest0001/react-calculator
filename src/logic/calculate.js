@@ -29,11 +29,18 @@ function calculate(data, name) {
         isCalculated: false,
       };
 
+    case ('%'):
+      return {
+        total: operate(total, '%', '0'),
+        operation: name,
+        next: null,
+        isCalculated: false,
+      };
+
     case ('+'):
     case ('-'):
     case ('÷'):
     case ('X'):
-    case ('%'):
       if (!total) {
         return {
           total: name === 'X' ? '1' : '0',
@@ -41,7 +48,9 @@ function calculate(data, name) {
           next,
           isCalculated,
         };
-      } if ((total && operation && !next) || (total && !operation)) {
+      }
+
+      if ((total && operation && !next) || (total && !operation)) {
         return {
           total,
           operation: name,
@@ -56,8 +65,16 @@ function calculate(data, name) {
         isCalculated: true,
       };
 
-
     case ('='):
+      if (next === '0' && operation === 'X') {
+        return {
+          total: 0,
+          operation: null,
+          next: null,
+          isCalculated: false,
+        };
+      }
+
       if (next) {
         return {
           total: operate(total, operation, next),
@@ -81,9 +98,19 @@ function calculate(data, name) {
           total: total === null ? name : total + name,
           operation,
           next,
-          isCalculated,
+          isCalculated: false,
         };
-      } if (total && isCalculated) {
+      }
+      if (total && isCalculated && operation) {
+        return {
+          total,
+          next: name,
+          operation,
+          isCalculated: false,
+        };
+      }
+
+      if (total && !operation) {
         return {
           total: name,
           next: null,

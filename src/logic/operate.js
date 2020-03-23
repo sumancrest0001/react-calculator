@@ -1,5 +1,5 @@
-/*eslint-disable*/
-import Big from 'big.js';
+
+import Big from 'big-js';
 
 function operate(total, operation, next) {
   let firstOperand;
@@ -23,7 +23,7 @@ function operate(total, operation, next) {
       break;
 
     case ('%'):
-      result = firstOperand.times(secondOperand.div('100')).toString();
+      result = firstOperand.div(100).toString();
       break;
 
     case ('X'):
@@ -31,7 +31,11 @@ function operate(total, operation, next) {
       break;
 
     case ('÷'):
-      result = firstOperand.div(secondOperand).toString();
+      try {
+        result = firstOperand.div(secondOperand).toString();
+      } catch (e) {
+        result = 'ERR';
+      }
       break;
 
     default:
