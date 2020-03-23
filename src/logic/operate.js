@@ -1,4 +1,4 @@
-import Big from 'big.js';
+import { Big } from 'big.js';
 
 function operate(total, operation, next) {
   let firstOperand;
