@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
-const button = props => {
-  const {
+const button = (
+  {
     name, wide, color, clickHandler,
-  } = props;
+  },
+) => {
   const size = wide ? '50%' : '25%';
   const styles = {
     width: size,
