@@ -3,14 +3,25 @@ import Helmet from 'react-helmet';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import Aux from './Aux';
+import calculate from '../logic/calculate';
 import classes from './App.module.css';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: '30',
+      total: null,
+      operation: null,
+      next: null,
+      isCalculated: false,
     };
+    this.clickHandler = this.clickHandler.bind(this);
+  }
+
+  clickHandler(buttonName) {
+    const output = calculate(this.state, buttonName);
+    this.setState(output);
   }
 
   render() {
@@ -21,9 +32,9 @@ class App extends Component {
           <Helmet bodyAttributes={{ style: 'background-color : #c9f0eb' }} />
           <Display
             // eslint-disable-next-line react/destructuring-assignment
-            output={this.state.total}
+            output={this.state}
           />
-          <ButtonPanel />
+          <ButtonPanel click={this.clickHandler} />
         </div>
       </Aux>
     );

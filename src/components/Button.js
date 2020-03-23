@@ -3,14 +3,23 @@ import PropTypes from 'prop-types';
 import classes from './Button.module.css';
 
 const button = props => {
-  const { name, wide, color } = props;
+  const {
+    name, wide, color, clicked,
+  } = props;
   const size = wide ? '50%' : '25%';
   const styles = {
     width: size,
     backgroundColor: color,
   };
   return (
-    <button type="button" className={classes.Button} style={styles}>{name}</button>
+    <button
+      type="button"
+      onClick={() => { clicked(name); }}
+      className={classes.Button}
+      style={styles}
+    >
+      {name}
+    </button>
   );
 };
 
@@ -18,6 +27,7 @@ button.propTypes = {
   name: PropTypes.string.isRequired,
   wide: PropTypes.bool,
   color: PropTypes.string,
+  clicked: PropTypes.func.isRequired,
 };
 
 button.defaultProps = {

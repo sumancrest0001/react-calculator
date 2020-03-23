@@ -33,6 +33,7 @@
         "arrow-parens": [
             "error",
             "as-needed"
-        ]
+        ],
+        "react/forbid-prop-types": "off"
     }
 }
